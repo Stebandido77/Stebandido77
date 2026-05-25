@@ -78,7 +78,7 @@ I'm a **financial consultant & applied economist** based in Bogotá, Colombia. I
 
 ## 📬 Let's Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/estebanlabastidas)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]([https://www.linkedin.com/in/estebanlabastidas](https://www.linkedin.com/in/esteban-labastidas-cmsa%C2%AE-8272a019a/))
 [![X / Twitter](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Stebandido77)
 [![Website](https://img.shields.io/badge/Website-FF5733?style=for-the-badge&logo=google-chrome&logoColor=white)](https://stebandido77.github.io/estebanlabastidas.github.io/#opening)
 
