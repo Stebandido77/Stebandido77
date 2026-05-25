@@ -10,7 +10,7 @@ I'm a **financial consultant & applied economist** based in Bogotá, Colombia. I
 
 ## 🧭 About Me
 
-- 🏦 Financial Consultant at **Banco de Bogotá / Grupo Aval** — capital markets, derivatives & treasury systems
+- 🏦 Financial and Strategy, I work in capital markets, derivatives & treasury systems
 - 🎓 M.Sc. in Applied Economics student at **Universidad de los Andes**
 - 📐 Dual degree in **Industrial Engineering & Economics** — Pontificia Universidad Javeriana
 - 🔬 Affiliated researcher at the **Sekia Research Group** (Javeriana)
