@@ -10,10 +10,10 @@ import sys
 import urllib.request
 from xml.sax.saxutils import escape
 
-from PIL import Image, ImageEnhance, ImageOps
+from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
-COLS, ROWS = 44, 26
-RAMP = " .'`^,:;Il!i><~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+COLS, ROWS = 48, 26
+RAMP = " .:-=+*#%@"
 
 INFO = [
     ("title", "esteban@labastidas"),
@@ -58,14 +58,33 @@ def fetch(url, token=None):
 
 
 def avatar_ascii(img):
-    img = ImageOps.exif_transpose(img).convert("L")
-    img = ImageOps.autocontrast(img, cutoff=2)
-    img = ImageEnhance.Contrast(img).enhance(1.3)
-    img = img.resize((COLS, ROWS), Image.LANCZOS)
-    px = img.load()
+    """Line-art friendly conversion: keeps strokes, drops the round frame."""
+    img = ImageOps.exif_transpose(img).convert("L").resize((440, 440), Image.LANCZOS)
+    w, h = img.size
+    # Keep only the inner disc of the avatar (GitHub avatars are often framed by a ring).
+    mask = Image.new("L", img.size, 0)
+    ImageDraw.Draw(mask).ellipse((w * 0.13, h * 0.13, w * 0.87, h * 0.87), fill=255)
+    # Strokes are whatever differs most from the dominant background tone.
+    hist, acc, bg = img.histogram(), 0, 0
+    for bg, count in enumerate(hist):  # median tone = background
+        acc += count
+        if acc >= w * h / 2:
+            break
+    diff = Image.eval(img, lambda v: min(255, abs(v - bg) * 2))
+    diff = Image.composite(diff, Image.new("L", img.size, 0), mask)
+    # Thicken thin strokes so they survive the downscale.
+    diff = diff.filter(ImageFilter.MaxFilter(7))
+    diff = ImageOps.autocontrast(diff, cutoff=1)
+    small = diff.resize((COLS, ROWS), Image.BOX)
+    px = small.load()
     n = len(RAMP) - 1
-    # Bright pixels -> dense glyphs (reads well on dark background).
-    return ["".join(RAMP[int(px[x, y] / 255 * n)] for x in range(COLS)) for y in range(ROWS)]
+    lines = ["".join(RAMP[min(n, int((px[x, y] / 255) ** 0.8 * n))] for x in range(COLS)) for y in range(ROWS)]
+    # Trim empty rows top/bottom.
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    while lines and not lines[-1].strip():
+        lines.pop()
+    return lines
 
 
 def github_stats(user, token):
@@ -95,9 +114,10 @@ def build_svg(ascii_lines, stats, t):
         "</style>",
         f'<rect width="{width}" height="{height}" rx="15" fill="{t["bg"]}" stroke="{t["border"]}"/>',
     ]
+    a_top = top + max(0, len(INFO) - len(ascii_lines)) * lh // 2
     for i, line in enumerate(ascii_lines):
         out.append(
-            f'<text class="l" style="animation-delay:{i*0.04:.2f}s" x="{left_x}" y="{top + i*lh}" '
+            f'<text class="l" style="animation-delay:{i*0.04:.2f}s" x="{left_x}" y="{a_top + i*lh}" '
             f'fill="{t["ascii"]}" xml:space="preserve">{escape(line)}</text>'
         )
 
