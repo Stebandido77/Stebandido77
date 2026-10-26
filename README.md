@@ -1,6 +1,6 @@
 <!-- Animated header -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f3b73,100:3b82f6&height=220&section=header&text=Esteban%20Labastidas&fontSize=48&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Strategy%20%26%20Investor%20Relations%20%C2%B7%20Applied%20Economist&descAlignY=58&descSize=18" alt="header" width="100%"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f3b73,100:3b82f6&height=200&section=header&text=Esteban%20Labastidas&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=40" alt="header" width="100%"/>
 </p>
 
 <!-- Typing animation -->
@@ -51,18 +51,6 @@ I bridge **corporate finance** and **empirical economics**: by day I build valua
 
 ---
 
-## 📌 Featured Projects
-
-<p align="center">
-  <a href="https://github.com/Stebandido77/pulso"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Stebandido77&repo=pulso&theme=tokyonight&hide_border=true" /></a>
-  <a href="https://github.com/Stebandido77/bond_valuation_tool"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Stebandido77&repo=bond_valuation_tool&theme=tokyonight&hide_border=true" /></a>
-</p>
-<p align="center">
-  <a href="https://github.com/Stebandido77/Monopoly"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Stebandido77&repo=Monopoly&theme=tokyonight&hide_border=true" /></a>
-</p>
-
----
-
 ## 📈 Research Interests
 
 - 📉 **Corporate finance & valuation** — cost of capital, M&A, derivatives
@@ -75,21 +63,13 @@ I bridge **corporate finance** and **empirical economics**: by day I build valua
 
 ## 🔥 GitHub Activity
 
+<!-- 3D contribution calendar (generated daily by .github/workflows/profile-assets.yml) -->
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Stebandido77&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Stebandido77&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" height="170" />
+  <img src="https://raw.githubusercontent.com/Stebandido77/Stebandido77/output/profile-night-rainbow.svg" width="100%" alt="3D contributions" />
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=Stebandido77&theme=tokyonight&hide_border=true" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Stebandido77&theme=tokyo-night&hide_border=true&area=true" width="100%" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Stebandido77&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&row=1" />
+  <img src="https://streak-stats.demolab.com?user=Stebandido77&theme=tokyonight&hide_border=true" alt="streak" />
 </p>
 
 <!-- Snake animation (generated daily by .github/workflows/snake.yml) -->
