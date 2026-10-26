@@ -10,10 +10,9 @@ import sys
 import urllib.request
 from xml.sax.saxutils import escape
 
-from PIL import Image, ImageDraw, ImageFilter, ImageOps
+from PIL import Image, ImageFilter, ImageOps
 
-COLS, ROWS = 48, 26
-RAMP = " .:-=+*#%@"
+COLS = 74
 
 INFO = [
     ("title", "esteban@labastidas"),
@@ -42,9 +41,9 @@ INFO = [
 ]
 
 THEMES = {
-    "dark": dict(bg="#0d1117", border="#30363d", ascii="#8b949e", key="#ffa657",
+    "dark": dict(bg="#0d1117", border="#30363d", ascii="#c9d1d9", key="#ffa657",
                  val="#a5d6ff", title="#3b82f6", rule="#6e7681", dot="#6e7681"),
-    "light": dict(bg="#ffffff", border="#d0d7de", ascii="#57606a", key="#953800",
+    "light": dict(bg="#ffffff", border="#d0d7de", ascii="#24292f", key="#953800",
                   val="#0a3069", title="#1f3b73", rule="#8c959f", dot="#8c959f"),
 }
 
@@ -57,34 +56,54 @@ def fetch(url, token=None):
         return r.read()
 
 
+# Fine text grid for the portrait: ASCII_FS px glyphs, ASCII_LH px lines.
+ASCII_FS, ASCII_LH = 10, 12
+CELL_W, CELL_H = 6, 12  # sampling cell, matches the glyph aspect (0.6em x line height)
+RAMP = " .:-=+*#%@"
+
+
+def _stroke_map(img):
+    """Map of the drawing's strokes: light lines inside the avatar's dark disc."""
+    img = ImageOps.exif_transpose(img).convert("L").resize((800, 800), Image.LANCZOS)
+    dark = img.point(lambda v: 255 if v < 128 else 0)
+    # Close the thin strokes so the disc becomes solid, then shrink it off its rim.
+    disc = dark.filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.MinFilter(15))
+    disc = disc.filter(ImageFilter.MinFilter(9))
+    if not disc.getbbox():  # not a dark-disc avatar: fall back to whole image
+        disc = Image.new("L", img.size, 255)
+    strokes = img.point(lambda v: 255 if v >= 128 else 0)
+    strokes = Image.composite(strokes, Image.new("L", img.size, 0), disc)
+    bbox = strokes.getbbox() or (0, 0, *img.size)
+    x0, y0, x1, y1 = bbox
+    m = 12
+    strokes = strokes.crop((max(0, x0 - m), max(0, y0 - m), x1 + m, y1 + m))
+    # Fit the crop to COLS x ROWS text cells (cells are twice as tall as wide).
+    w, h = strokes.size
+    rows = max(8, round(COLS * CELL_W * h / w / CELL_H))
+    strokes = strokes.filter(ImageFilter.MaxFilter(3))
+    strokes = strokes.resize((COLS * CELL_W, rows * CELL_H), Image.LANCZOS)
+    return strokes.filter(ImageFilter.GaussianBlur(0.8)), rows
+
+
 def avatar_ascii(img):
-    """Line-art friendly conversion: keeps strokes, drops the round frame."""
-    img = ImageOps.exif_transpose(img).convert("L").resize((440, 440), Image.LANCZOS)
-    w, h = img.size
-    # Keep only the inner disc of the avatar (GitHub avatars are often framed by a ring).
-    mask = Image.new("L", img.size, 0)
-    ImageDraw.Draw(mask).ellipse((w * 0.13, h * 0.13, w * 0.87, h * 0.87), fill=255)
-    # Strokes are whatever differs most from the dominant background tone.
-    hist, acc, bg = img.histogram(), 0, 0
-    for bg, count in enumerate(hist):  # median tone = background
-        acc += count
-        if acc >= w * h / 2:
-            break
-    diff = Image.eval(img, lambda v: min(255, abs(v - bg) * 2))
-    diff = Image.composite(diff, Image.new("L", img.size, 0), mask)
-    # Thicken thin strokes so they survive the downscale.
-    diff = diff.filter(ImageFilter.MaxFilter(7))
-    diff = ImageOps.autocontrast(diff, cutoff=1)
-    small = diff.resize((COLS, ROWS), Image.BOX)
+    """Dense line-art conversion: small glyphs on a fine grid, weighted by stroke coverage."""
+    strokes, rows = _stroke_map(img)
+    small = strokes.resize((COLS, rows), Image.BOX)
     px = small.load()
     n = len(RAMP) - 1
-    lines = ["".join(RAMP[min(n, int((px[x, y] / 255) ** 0.8 * n))] for x in range(COLS)) for y in range(ROWS)]
-    # Trim empty rows top/bottom.
+    lines = []
+    for y in range(rows):
+        row = []
+        for x in range(COLS):
+            v = px[x, y] / 255
+            row.append(" " if v < 0.06 else RAMP[max(1, min(n, round(v ** 0.6 * n)))])
+        lines.append("".join(row).rstrip())
     while lines and not lines[0].strip():
         lines.pop(0)
     while lines and not lines[-1].strip():
         lines.pop()
-    return lines
+    pad = min(len(l) - len(l.lstrip()) for l in lines if l.strip())
+    return [l[pad:] for l in lines]
 
 
 def github_stats(user, token):
@@ -100,9 +119,13 @@ def github_stats(user, token):
 
 def build_svg(ascii_lines, stats, t):
     fs, lh = 15, 20
-    left_x, right_x, top = 25, 420, 35
-    width = 985
-    height = max(len(ascii_lines), len(INFO)) * lh + top + 10
+    left_x, top = 25, 35
+    art_w = max(len(l) for l in ascii_lines) * ASCII_FS * 0.6
+    right_x = int(left_x + art_w + 35)
+    width = right_x + 565
+    art_h = len(ascii_lines) * ASCII_LH
+    info_h = len(INFO) * lh
+    height = max(art_h, info_h) + top + 10
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
         f'font-family="ui-monospace, SFMono-Regular, Consolas, \'Liberation Mono\', monospace" font-size="{fs}px">',
@@ -114,15 +137,16 @@ def build_svg(ascii_lines, stats, t):
         "</style>",
         f'<rect width="{width}" height="{height}" rx="15" fill="{t["bg"]}" stroke="{t["border"]}"/>',
     ]
-    a_top = top + max(0, len(INFO) - len(ascii_lines)) * lh // 2
+    a_top = top - 8 + max(0, info_h - art_h) // 2
+    i_top = top + max(0, art_h - info_h) // 2
     for i, line in enumerate(ascii_lines):
         out.append(
-            f'<text class="l" style="animation-delay:{i*0.04:.2f}s" x="{left_x}" y="{a_top + i*lh}" '
+            f'<text class="l" style="animation-delay:{i*0.025:.2f}s" x="{left_x}" y="{a_top + i*ASCII_LH}" font-size="{ASCII_FS}px" '
             f'fill="{t["ascii"]}" xml:space="preserve">{escape(line)}</text>'
         )
 
-    base = len(ascii_lines) * 0.04
-    y = top
+    base = 0.3
+    y = i_top
     for i, row in enumerate(INFO):
         delay = f"animation-delay:{base + i*0.07:.2f}s"
         kind = row[0]
