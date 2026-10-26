@@ -157,6 +157,8 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     src = os.environ.get("AVATAR_FILE")
     raw = open(src, "rb").read() if src else fetch(f"https://github.com/{user}.png?size=400")
+    with open(os.path.join(out_dir, "avatar.png"), "wb") as f:
+        f.write(raw)
     lines = avatar_ascii(Image.open(io.BytesIO(raw)))
     stats = github_stats(user, token) if not src else {"Repos": 12, "Stars": 34, "Followers": 56}
     for name, theme in THEMES.items():
