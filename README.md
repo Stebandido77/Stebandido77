@@ -1,6 +1,10 @@
-<!-- Animated header -->
+<!-- ASCII-art profile card (generated daily by .github/workflows/profile-assets.yml) -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f3b73,100:3b82f6&height=200&section=header&text=Esteban%20Labastidas&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=40" alt="header" width="100%"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Stebandido77/Stebandido77/output/ascii-card-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Stebandido77/Stebandido77/output/ascii-card-light.svg" />
+    <img alt="Esteban Labastidas" src="https://raw.githubusercontent.com/Stebandido77/Stebandido77/output/ascii-card-dark.svg" width="100%" />
+  </picture>
 </p>
 
 <!-- Typing animation -->
@@ -16,19 +20,6 @@
   <a href="https://stebandido77.github.io/estebanlabastidas.github.io/#opening"><img src="https://img.shields.io/badge/Website-3B82F6?style=for-the-badge&logo=google-chrome&logoColor=white" /></a>
   <img src="https://komarev.com/ghpvc/?username=Stebandido77&style=for-the-badge&color=1f3b73&label=PROFILE+VIEWS" />
 </p>
-
----
-
-## 🧭 About Me
-
-I bridge **corporate finance** and **empirical economics**: by day I build valuation models and strategy for one of Colombia's largest financial groups; by night I build tools and investigate how people and institutions make decisions under uncertainty.
-
-- 🏦 **Strategy & Investor Relations** analyst at **Grupo Aval** — M&A valuation, financial analysis, corporate strategy
-- 🎓 M.Sc. in **Applied Economics** — Universidad de los Andes · M.Sc. in **Finance** — EUDE Business School
-- 📐 Dual degree in **Industrial Engineering & Economics** — Pontificia Universidad Javeriana
-- 💼 Previously **Management Solutions** (Consultant II) · **JPMorgan Chase** (intern)
-- 🔬 Affiliated researcher at the **Sekia Research Group** (Javeriana)
-- 📊 **CMSA®** certified
 
 ---
 
