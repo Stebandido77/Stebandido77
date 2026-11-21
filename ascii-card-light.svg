@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1051" height="597" viewBox="0 0 1051 597" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" font-size="15px">
+<style>
+.l{opacity:0;animation:in .45s ease-out forwards}
+@keyframes in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+.cur{animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+</style>
+<rect width="1051" height="597" rx="15" fill="#ffffff" stroke="#d0d7de"/>
+<text class="l" style="animation-delay:0.00s" x="25" y="27" font-size="10px" fill="#24292f" xml:space="preserve">                                          :::</text>
+<text class="l" style="animation-delay:0.03s" x="25" y="39" font-size="10px" fill="#24292f" xml:space="preserve">                             :=*#####*####**%@%*:</text>
+<text class="l" style="animation-delay:0.05s" x="25" y="51" font-size="10px" fill="#24292f" xml:space="preserve">                           =#%*=:    ::    :===*#######*-</text>
+<text class="l" style="animation-delay:0.08s" x="25" y="63" font-size="10px" fill="#24292f" xml:space="preserve">                        : #%=                          +%#=     :</text>
+<text class="l" style="animation-delay:0.10s" x="25" y="75" font-size="10px" fill="#24292f" xml:space="preserve">                       %@%#                              =*####%%</text>
+<text class="l" style="animation-delay:0.12s" x="25" y="87" font-size="10px" fill="#24292f" xml:space="preserve">                  :+###%*+-                                   #%%=</text>
+<text class="l" style="animation-delay:0.15s" x="25" y="99" font-size="10px" fill="#24292f" xml:space="preserve">                 +@@%#-                                         +@* :+</text>
+<text class="l" style="animation-delay:0.18s" x="25" y="111" font-size="10px" fill="#24292f" xml:space="preserve">                 *@*-                                           :*###@-</text>
+<text class="l" style="animation-delay:0.20s" x="25" y="123" font-size="10px" fill="#24292f" xml:space="preserve">                *%-                                       =-       +%*</text>
+<text class="l" style="animation-delay:0.23s" x="25" y="135" font-size="10px" fill="#24292f" xml:space="preserve">                %@+                               ##:   + ##-**   :#%</text>
+<text class="l" style="animation-delay:0.25s" x="25" y="147" font-size="10px" fill="#24292f" xml:space="preserve">               +%=                                =@# =#@%#+++%+ -*%@+</text>
+<text class="l" style="animation-delay:0.28s" x="25" y="159" font-size="10px" fill="#24292f" xml:space="preserve">               %+                               *#%##**=      =@#%*+-</text>
+<text class="l" style="animation-delay:0.30s" x="25" y="171" font-size="10px" fill="#24292f" xml:space="preserve">               %+                              =@+      -++***-#%</text>
+<text class="l" style="animation-delay:0.33s" x="25" y="183" font-size="10px" fill="#24292f" xml:space="preserve">               *@*                           =#%=     +%%**+**+##</text>
+<text class="l" style="animation-delay:0.35s" x="25" y="195" font-size="10px" fill="#24292f" xml:space="preserve">               :@:             :===:        %%=       - -+*%* -@=</text>
+<text class="l" style="animation-delay:0.38s" x="25" y="207" font-size="10px" fill="#24292f" xml:space="preserve">                %*            *%*##%%=     =@-         *#*@*   +%+</text>
+<text class="l" style="animation-delay:0.40s" x="25" y="219" font-size="10px" fill="#24292f" xml:space="preserve">                =%#:         +%::+%%+#%+:  +%             -:    -%#:</text>
+<text class="l" style="animation-delay:0.43s" x="25" y="231" font-size="10px" fill="#24292f" xml:space="preserve">                 -%*         =@: *%*+ =*%= *@                     *%=</text>
+<text class="l" style="animation-delay:0.45s" x="25" y="243" font-size="10px" fill="#24292f" xml:space="preserve">                  =%+:        #%-*%-:   +###+                 =    =@+</text>
+<text class="l" style="animation-delay:0.48s" x="25" y="255" font-size="10px" fill="#24292f" xml:space="preserve">                   -#%-        *%+=+*%+                      :@###**%=</text>
+<text class="l" style="animation-delay:0.50s" x="25" y="267" font-size="10px" fill="#24292f" xml:space="preserve">                     +%+        =@%*-:=-                       :%#+=</text>
+<text class="l" style="animation-delay:0.53s" x="25" y="279" font-size="10px" fill="#24292f" xml:space="preserve">                      -%*       :@++*#*-                  :=    %+</text>
+<text class="l" style="animation-delay:0.55s" x="25" y="291" font-size="10px" fill="#24292f" xml:space="preserve">                       =@*     =@#                        +##**%%-</text>
+<text class="l" style="animation-delay:0.58s" x="25" y="303" font-size="10px" fill="#24292f" xml:space="preserve">                        +%+:  -##                              ##</text>
+<text class="l" style="animation-delay:0.60s" x="25" y="315" font-size="10px" fill="#24292f" xml:space="preserve">                         +%#-*@*                              +%</text>
+<text class="l" style="animation-delay:0.62s" x="25" y="327" font-size="10px" fill="#24292f" xml:space="preserve">                          -%@%-                               =@:</text>
+<text class="l" style="animation-delay:0.65s" x="25" y="339" font-size="10px" fill="#24292f" xml:space="preserve">                        +%%%@-                      :-::     :#%</text>
+<text class="l" style="animation-delay:0.68s" x="25" y="351" font-size="10px" fill="#24292f" xml:space="preserve">                       +%-=%%:                    -%#**###**##*:</text>
+<text class="l" style="animation-delay:0.70s" x="25" y="363" font-size="10px" fill="#24292f" xml:space="preserve">                      *%=   *%*:                  *#</text>
+<text class="l" style="animation-delay:0.73s" x="25" y="375" font-size="10px" fill="#24292f" xml:space="preserve">                    -#%-     :*%*:               :%+</text>
+<text class="l" style="animation-delay:0.75s" x="25" y="387" font-size="10px" fill="#24292f" xml:space="preserve">                :+#%#*%#:      :*%#-             #@#:</text>
+<text class="l" style="animation-delay:0.78s" x="25" y="399" font-size="10px" fill="#24292f" xml:space="preserve">             =*##*-    *%+        +%#=          #%:*%=</text>
+<text class="l" style="animation-delay:0.80s" x="25" y="411" font-size="10px" fill="#24292f" xml:space="preserve">         :+#%*=:        -#%=        =#%*       +@=  =%+</text>
+<text class="l" style="animation-delay:0.83s" x="25" y="423" font-size="10px" fill="#24292f" xml:space="preserve">      -*%#*-              +%*         :*%#-    =#%   =@+</text>
+<text class="l" style="animation-delay:0.85s" x="25" y="435" font-size="10px" fill="#24292f" xml:space="preserve">   :+%#+:                  :*%=        =#%%*:   ##    +@#%*-</text>
+<text class="l" style="animation-delay:0.88s" x="25" y="447" font-size="10px" fill="#24292f" xml:space="preserve"> -#%*:                       =%#     +%#=:=*%+  %+  +#@#  +#%*=</text>
+<text class="l" style="animation-delay:0.90s" x="25" y="459" font-size="10px" fill="#24292f" xml:space="preserve">*%+                            #%= *%#-  %@%*% +@:+%*-%#     +#%*:</text>
+<text class="l" style="animation-delay:0.93s" x="25" y="471" font-size="10px" fill="#24292f" xml:space="preserve">=                               =%%*:     -:## %*-@=  -+       :*%+</text>
+<text class="l" style="animation-delay:0.95s" x="25" y="483" font-size="10px" fill="#24292f" xml:space="preserve">                                            -@*@+%*              -%#</text>
+<text class="l" style="animation-delay:0.98s" x="25" y="495" font-size="10px" fill="#24292f" xml:space="preserve">                                             =@@%=                :%*</text>
+<text class="l" style="animation-delay:1.00s" x="25" y="507" font-size="10px" fill="#24292f" xml:space="preserve">                                              *@-                  =@-</text>
+<text class="l" style="animation-delay:1.03s" x="25" y="519" font-size="10px" fill="#24292f" xml:space="preserve">                                              -@=                   ##</text>
+<text class="l" style="animation-delay:1.05s" x="25" y="531" font-size="10px" fill="#24292f" xml:space="preserve">                                               %*                   ::</text>
+<text class="l" style="animation-delay:1.07s" x="25" y="543" font-size="10px" fill="#24292f" xml:space="preserve">                                               +%</text>
+<text class="l" style="animation-delay:1.10s" x="25" y="555" font-size="10px" fill="#24292f" xml:space="preserve">                                               -@:</text>
+<text class="l" style="animation-delay:1.12s" x="25" y="567" font-size="10px" fill="#24292f" xml:space="preserve">                                                :</text>
+<text class="l" style="animation-delay:0.30s" x="486" y="81" fill="#1f3b73" font-weight="bold">esteban@labastidas<tspan class="cur">▌</tspan></text>
+<text class="l" style="animation-delay:0.37s" x="486" y="101" fill="#8c959f">————————————————————————————————————————————————————</text>
+<text class="l" style="animation-delay:0.44s" x="486" y="121" xml:space="preserve"><tspan fill="#953800">Location</tspan><tspan fill="#8c959f">:......... </tspan><tspan fill="#0a3069">Bogotá, Colombia</tspan></text>
+<text class="l" style="animation-delay:0.51s" x="486" y="141" xml:space="preserve"><tspan fill="#953800">Role</tspan><tspan fill="#8c959f">:............. </tspan><tspan fill="#0a3069">Strategy &amp; Investor Relations @ Grupo Aval</tspan></text>
+<text class="l" style="animation-delay:0.58s" x="486" y="161" xml:space="preserve"><tspan fill="#953800">Focus</tspan><tspan fill="#8c959f">:............ </tspan><tspan fill="#0a3069">M&amp;A valuation · corporate finance</tspan></text>
+<text class="l" style="animation-delay:0.65s" x="486" y="181" xml:space="preserve"><tspan fill="#953800">Research</tspan><tspan fill="#8c959f">:......... </tspan><tspan fill="#0a3069">Impact evaluation · education · fintech</tspan></text>
+<text class="l" style="animation-delay:0.79s" x="486" y="221" xml:space="preserve"><tspan fill="#953800">Education.MSc</tspan><tspan fill="#8c959f">:.... </tspan><tspan fill="#0a3069">Applied Economics — Uniandes</tspan></text>
+<text class="l" style="animation-delay:0.86s" x="486" y="241" xml:space="preserve"><tspan fill="#953800">Education.MSc</tspan><tspan fill="#8c959f">:.... </tspan><tspan fill="#0a3069">Finance — EUDE Business School</tspan></text>
+<text class="l" style="animation-delay:0.93s" x="486" y="261" xml:space="preserve"><tspan fill="#953800">Education.BSc</tspan><tspan fill="#8c959f">:.... </tspan><tspan fill="#0a3069">Ind. Engineering &amp; Economics — Javeriana</tspan></text>
+<text class="l" style="animation-delay:1.00s" x="486" y="281" xml:space="preserve"><tspan fill="#953800">Certs</tspan><tspan fill="#8c959f">:............ </tspan><tspan fill="#0a3069">CMSA®</tspan></text>
+<text class="l" style="animation-delay:1.14s" x="486" y="321" xml:space="preserve"><tspan fill="#953800">Languages.Code</tspan><tspan fill="#8c959f">:... </tspan><tspan fill="#0a3069">Python, R, Stata, SQL, VBA, LaTeX</tspan></text>
+<text class="l" style="animation-delay:1.21s" x="486" y="341" xml:space="preserve"><tspan fill="#953800">Languages.Real</tspan><tspan fill="#8c959f">:... </tspan><tspan fill="#0a3069">Spanish, English</tspan></text>
+<text class="l" style="animation-delay:1.28s" x="486" y="361" xml:space="preserve"><tspan fill="#953800">Motto</tspan><tspan fill="#8c959f">:............ </tspan><tspan fill="#0a3069">Derivatives by day, Batman by night</tspan></text>
+<text class="l" style="animation-delay:1.42s" x="486" y="401" fill="#1f3b73" font-weight="bold">- Contact ———————————————————————————————————————</text>
+<text class="l" style="animation-delay:1.49s" x="486" y="421" xml:space="preserve"><tspan fill="#953800">LinkedIn</tspan><tspan fill="#8c959f">:......... </tspan><tspan fill="#0a3069">esteban-labastidas-cmsa</tspan></text>
+<text class="l" style="animation-delay:1.56s" x="486" y="441" xml:space="preserve"><tspan fill="#953800">X</tspan><tspan fill="#8c959f">:................ </tspan><tspan fill="#0a3069">@Stebandido77</tspan></text>
+<text class="l" style="animation-delay:1.63s" x="486" y="461" xml:space="preserve"><tspan fill="#953800">Web</tspan><tspan fill="#8c959f">:.............. </tspan><tspan fill="#0a3069">stebandido77.github.io</tspan></text>
+<text class="l" style="animation-delay:1.77s" x="486" y="501" fill="#1f3b73" font-weight="bold">- GitHub Stats ——————————————————————————————————</text>
+<text class="l" style="animation-delay:1.84s" x="486" y="521" xml:space="preserve"><tspan fill="#953800">Repos</tspan><tspan fill="#8c959f">: </tspan><tspan fill="#0a3069">9</tspan><tspan fill="#8c959f">   </tspan><tspan fill="#953800">Stars</tspan><tspan fill="#8c959f">: </tspan><tspan fill="#0a3069">1</tspan><tspan fill="#8c959f">   </tspan><tspan fill="#953800">Followers</tspan><tspan fill="#8c959f">: </tspan><tspan fill="#0a3069">1</tspan><tspan fill="#8c959f">   </tspan></text>
+</svg>
